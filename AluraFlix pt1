@@ -1,0 +1,130 @@
+# JS
+//Estrutura de lista (arrays)
+var lista = [
+  'https://i.pinimg.com/564x/d2/76/74/d276747738bcb687222ca0022505a19c.jpg', 'https://i.pinimg.com/564x/71/83/91/718391e94879f613a965717b2ab65c44.jpg','https://i.pinimg.com/564x/8c/e2/08/8ce208d7a7eb0e370a8a87ea6567ebc6.jpg'
+];
+
+  //evitar repetir código
+for (var i=0; i < lista.length; i++) {
+  document.write('<img src=' + lista[i] + '>');
+}
+
+
+//botao
+
+function adicionarPoster() {
+  var url = document.getElementById("urlImagem").value;
+  
+  if (url.endsWith(".jpg")) {
+    var imagem = document.createElement("img");
+    imagem.src = url;
+  
+    document.getElementById("containerPosters").appendChild(imagem);
+    
+    // Salvar a alteração no código
+    var codigo = document.documentElement.innerHTML;
+    localStorage.setItem("codigoSalvo", codigo);
+  } else {
+    console.log("URL inválida. A URL deve terminar com '.jpg'.");
+  }
+}
+
+// Recuperar a alteração salva no código ao carregar a página
+window.onload = function() {
+  var codigoSalvo = localStorage.getItem("codigoSalvo");
+  if (codigoSalvo) {
+    document.documentElement.innerHTML = codigoSalvo;
+  }
+}
+
+
+# HTML
+a imagem<div class="container">
+  <h1 class="page-title">
+    ATEEZflix
+  </h1>
+  <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+</div>
+<a href="https://alura.com.br/" target="_blank">
+  <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+</a>
+
+
+<!-- tentativa de botao -->
+<input type="text" id="urlImagem" placeholder="URL da imagem">
+<button onclick="adicionarPoster()">Adicionar Pôster</button>
+
+<div id="containerPosters"></div>
+
+<script>
+function adicionarPoster() {
+  var url = document.getElementById("urlImagem").value;
+  
+  if (url.endsWith(".jpg")) {
+    var imagem = document.createElement("img");
+    imagem.src = url;
+  
+    document.getElementById("containerPosters").appendChild(imagem);
+    
+    // Salvar a alteração no código
+    var codigo = document.documentElement.innerHTML;
+    localStorage.setItem("codigoSalvo", codigo);
+  } else {
+    console.log("URL inválida. A URL deve terminar com '.jpg'.");
+  }
+}
+
+// Recuperar a alteração salva no código ao carregar a página
+window.onload = function() {
+  var codigoSalvo = localStorage.getItem("codigoSalvo");
+  if (codigoSalvo) {
+    document.documentElement.innerHTML = codigoSalvo;
+  }
+}
+</script>
+
+
+# CSS
+body {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background-image: url("https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/background-aluraflix.png");
+  background-color: #000000;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+body > img {
+  margin: 0 10px;
+}
+
+img {
+  max-height: 250px;
+}
