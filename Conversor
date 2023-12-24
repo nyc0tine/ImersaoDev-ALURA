@@ -1,0 +1,90 @@
+# JS
+
+var nome = prompt("Digite seu nome: ");
+var valorEmBitcoin = prompt("Digite o valor em bitcoin: ");
+
+var valorEmReal = valorEmBitcoin * 182080.5;
+valorEmReal = valorEmReal.toFixed(2);
+
+alert(nome + ", " + valorEmBitcoin + " bitcoins valem " + "R$ " + valorEmReal);
+
+var corpo1 = "Terra";
+var corpo2 = prompt(
+  "Para ver uma curiosidade, digite a distância de um corpo celeste do sol em anos luz: "
+);
+var nomeDoCorpo = prompt("Qual o nome desse corpo? ");
+
+var umAnoLuzMetro = 9500000000000000;
+
+var distanciaTerraSolMetros = 150000000000;
+var distanciaCorpo2SolMetros = umAnoLuzMetro * 18000000000;
+
+var distanciaEmMetros = distanciaCorpo2SolMetros - distanciaTerraSolMetros;
+
+alert(
+  "A distância em metros entre " +
+    nomeDoCorpo +
+    " e a " +
+    corpo1 +
+    " é " +
+    distanciaEmMetros +
+    " metros."
+);
+
+
+# HTML
+<div class="container">
+  <h1 class="page-title">
+    Conversor Interestelar
+  </h1>
+  <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+</div>
+<a href="https://alura.com.br/" target="_blank">
+  <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+
+
+# CSS
+body {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background-image: url("https://images6.alphacoders.com/590/590933.jpg");
+  background-color: #000000;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+body > img {
+  margin: 0 10px;
+}
+
+img {
+  max-height: 250px;
+}
